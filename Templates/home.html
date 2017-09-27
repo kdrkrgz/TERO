@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ana Sayfa - {{ block.super }} {% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+<link rel="stylesheet" href="{% static 'fonts/foundation-icons.css' %}" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/modernizr.js.js' %}"></script>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top">
+    <!-- top nav -->
+    <nav class="navbar navbar-top hidden-xs">
+        <div class="container">
+            <!-- left nav top -->
+            <ul class="nav navbar-nav pull-left">
+                <li><a href="#"><span class="fi-social-facebook"></span></a></li>
+                <li><a href="#"><span class="fi-social-twitter"></span></a></li>
+                <li><a href="#"><span class="fi-social-instagram"></span></a></li>
+                <li><a href="#"><span class="fi-social-youtube"></span></a></li>
+            </ul>
+            <!-- right nav top -->
+            <ul class="nav navbar-nav pull-right">
+              <!--<li><a href="#" class="text-white">Hakkımızda</a></li>
+              <li><a href="#" class="text-white">İletişim</a></li>-->
+                <li class="dropdown">
+                    <a id="signplace" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sign-in"></span>&nbsp;<b>Giriş</b><span class="caret"></span></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    Oturum Aç
+                                    <div class="social-buttons">
+                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                    </div>
+                                    veya
+                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputEmail2">Email Adresi</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputPassword2">Şifre</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                            <div class="help-block text-right"><a href="">Şifremi Unuttum</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Bağlı Kal
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="bottom text-center">
+                                    Hesabınız Yokmu? <a href="#"><b>Kaydol</b></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="dividline light-grey"></div>
+    </nav>
+    <!-- down nav -->
+    <nav class="navbar navbar-down">
+        <div class="container">
+            <div class="flex-container">
+                <div class="navbar-header flex-item">
+                    <div class="navbar-brand" href="#" style="width: 120px; height: 120px;margin-top: -20px"><a href="#"><img src="../static/images/logohexagonbluetransp.png" style="width: 80%; margin: auto"></a></div>
+                </div>
+                <ul id="top-menu" class="nav navbar-nav flex-item hidden-xs">
+                    <li><a href="{% url 'main:robot' %}">Tercih Robotu</a></li>
+                    <li><a href="#">Üniversite Tanıtımları</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <ul class="nav navbar-nav flex-item hidden-xs pull-right">
+                    
+                </ul>
+                <!-- dropdown only mobile -->
+                <div class="dropdown visible-xs pull-right">
+                    <button class="btn btn-default dropdown-toggle " type="button" id="dropdownmenu" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'main:robot' %}">Tercih Robotu</a></li>
+                        <li><a href="#">Üniversite Tanıtımları</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                Giriş Yap
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">hi mf</a>
+                        </li>
+                        <li>
+                            <a href="#">hi syndra</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</nav>
+<!--bg img  -->
+
+<header>
+    <div class="row">
+
+        <div class="col-md-4 .col-xs-6 .col-md-4">
+
+            <h1>
+                <a class="typewrite" data-period="2000" data-type='["Tercih Robotu",
+                   "Üniversite Taban Puanları", "Üniversite Tanıtımları", " En İyi Üniversiteler" ]'>
+                    <span class="wrap"></span>
+                </a>
+            </h1>
+        </div>
+    </div>
+</header>
+{% endblock %}

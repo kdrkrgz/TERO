@@ -1,0 +1,382 @@
+{% extends 'base.html' %}
+
+{% block title %} Tercih Robotu-{{ block.super }}{% endblock %}
+{% load static from static %}
+
+{% block body %}
+<ul class='socials'>
+    <li>
+        <a class="fa fa-facebook" href="#">
+            <span>Facebook</span>
+        </a>
+    </li>
+
+    <li>
+        <a class="fa fa-twitter" href="#">
+            <span>Twitter</span>
+        </a>
+    </li>
+
+    <li>
+        <a class="fa fa-instagram" href="#">
+            <span>İnstagram</span>
+        </a>
+    </li>
+
+    <li>
+        <a class="fa fa-youtube-play" href="#">
+            <span>YouTube</span>
+        </a>
+    </li>
+
+</ul>
+<div class="container">
+    <div class="row">
+        <h2>Tercih Robotu</h2>
+        <table>
+            <tr>Filtreler</tr>
+            <tr><td><ul><li>Üniversite Tablosu(Üniversite Ana Site Yönlendirme Butonu)</li></ul></td></tr>
+            <tr><td><ul><li>Meraklısına İstatistikler (En çok bölüm, hoca, fakülte vs..)</li></ul></td></tr>
+            <tr><td><ul><li>Özel Şartlar ve Açıklamaları</li></ul></td></tr>
+            <tr><td><ul><li>Üni temsilcisi-hoca öğrenci buluşturma (facetime-chat-...)</li></ul></td></tr>
+            <tr><td><ul><li>Yeni Açılan Bölümleri Gizle Butonu checkbox</li></ul></td></tr>
+        </table>
+        <hr>
+        <form action="{% url 'home' %}">
+            <input type="submit" class="btn btn-primary" value="Ana Sayfa">
+        </form>
+    </div>
+    <hr>
+    <!--        <table id='robot' class="ui fixed single line celled table">
+              <thead>
+                <tr><th>Sıra</th>
+                    <th>Okul Adı</th>
+                    <th>Okul Tipi</th>
+                    <th>Bulunduğu Şehir</th>
+                </tr>
+              </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+            </table>
+            <script>
+                $('#robot').dataTable({
+        ajax: {
+            url: 'http://127.0.0.1:5000/data/unilist',
+            dataSrc: ''
+        },
+        columns: [
+            { "data": "uid"},
+            { "data": "uni_name"},
+            { "data": "uni_type"},
+            { "data": "uni_city"}
+        ]
+    });
+            </script>
+                    <hr>
+            <table id='faklist' class="ui fixed single line celled table">
+              <thead>
+                <tr><th>fid</th>
+                    <th>fak_name</th>
+                    <th>uid</th>
+                </tr>
+              </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+            </table>
+            <script>
+                $('#faklist').dataTable({
+        ajax: {
+            url: 'http://127.0.0.1:5000/data/faklist',
+            dataSrc: ''
+        },
+        columns: [
+            { "data": "fid"},
+            { "data": "fak_name"},
+            { "data": "uid"}
+        ]
+    });
+            </script> -->
+    <table>
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="10%" height="50">
+                    <label for="DİL-1">
+                        <input onchange="filter()" id="DİL-1" type="checkbox" name="point_type" value="DİL-1" /> DİL-1
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="DİL-2">
+                        <input onchange="filter()" id="DİL-2" type="checkbox" name="point_type" value="DİL-2" /> DİL-2
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="DİL-3">
+                        <input onchange="filter()" id="DİL-3" type="checkbox" name="point_type" value="DİL-3" /> DİL-3
+                    </label>
+                </td>
+
+            </tr>
+            <tr>
+                <td width="10%" height="50">
+                    <label for="MF">
+                        <input onchange="filter()" id="MF" type="checkbox" name="point_type" value="MF" /> MF
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="MF-1">
+                        <input onchange="filter()" id="MF-1" type="checkbox" name="point_type" value="MF-1" /> MF-1
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="MF-2">
+                        <input onchange="filter()" id="MF-2" type="checkbox" name="point_type" value="MF-2" /> MF-2
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="MF-3">
+                        <input onchange="filter()" id="MF-3" type="checkbox" name="point_type" value="MF-3" /> MF-3
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="MF-4">
+                        <input onchange="filter()" id="MF-4" type="checkbox" name="point_type" value="MF-4" /> MF-4
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td width="10%" height="50">
+                    <label for="TM-1">
+                        <input onchange="filter()" id="TM-1" type="checkbox" name="point_type" value="TM-1" /> TM-1
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="TM-2">
+                        <input onchange="filter()" id="TM-2" type="checkbox" name="point_type" value="TM-2" /> TM-2
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="TM-3">
+                        <input onchange="filter()" id="TM-3" type="checkbox" name="point_type" value="TM-3" /> TM-3
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td width="10%" height="50">
+                    <label for="TS-1">
+                        <input onchange="filter()" id="TS-1" type="checkbox" name="point_type" value="TS-1" /> TS-1
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="TS-2">
+                        <input onchange="filter()" id="TS-2" type="checkbox" name="point_type" value="TS-2" /> TS-2
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td width="10%" height="50">
+                    <label for="YGS-1">
+                        <input onchange="filter()" id="YGS-1" type="checkbox" name="point_type" value="YGS-1" /> YGS-1
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="YGS-2">
+                        <input onchange="filter()" id="YGS-2" type="checkbox" name="point_type" value="YGS-2" /> YGS-2
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="YGS-3">
+                        <input onchange="filter()" id="YGS-3" type="checkbox" name="point_type" value="YGS-3" /> YGS-3
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="YGS-4">
+                        <input onchange="filter()" id="YGS-4" type="checkbox" name="point_type" value="YGS-4" /> YGS-4
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="YGS-5">
+                        <input onchange="filter()" id="YGS-5" type="checkbox" name="point_type" value="YGS-5" /> YGS-5
+                    </label>
+                </td>
+                <td width="10%" height="50">
+                    <label for="YGS-6">
+                        <input onchange="filter()" id="YGS-6" type="checkbox" name="point_type" value="YGS-6" /> YGS-6
+                    </label>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <label for="durum">
+        <input type="checkbox" name="durum" id="new_deps" value=""> Yeni Açılan Bölümleri Gizle
+    </label>
+    <hr>
+    <label for="Devlet">
+        <input onchange="filter()" type="checkbox" name="uni_type" id="Devlet" value="Devlet">  Devlet Üniversitesi
+    </label>
+    <hr>
+    <label for="Vakıf">
+        <input onchange="filter()" type="checkbox" name="uni_type" id="Vakıf" value="Vakıf">  Vakıf Üniversitesi
+    </label>
+
+    <hr>
+    <div id="placement_select">
+
+        <table id="filter-table" align="center">
+            <tr>
+                <th width="20%" style="padding-bottom: 20px"><input class="" type="radio" name="spl" value="radio1" /> Başarı Sırasına Göre</th>
+                <th width="40%"></th>
+                <th width="15%" style="padding-bottom: 20px"><input type="radio" name="spl" value="radio2" /> Puana Göre</th>
+            </tr>
+            <tr style="padding-bottom: 20px">
+                <td>Minimum Başarı Sırası:</td>
+                <td><input id="minplacement" name="for_radio1[]" type="text" disabled='true' placeholder="" class="radio1"></td>
+                <td>Minimum Puan:</td>
+                <td><input id="minpoint" name="for_radio2[]" type="text" disabled='true' class="radio2"></td>
+
+            </tr>
+
+            <tr style="padding-bottom: 20px">
+                <td>Maximum Başarı Sırası:</td>
+                <td><input id="maxplacement" name="for_radio1[]" type="text" disabled='true' class="radio1"></td>
+                <td>Maximum Puan:</td>
+                <td><input id="maxpoint" name="for_radio2[]" type="text" disabled='true' class="radio2"></td>
+            </tr>
+
+        </table>
+    </div>
+    <hr>
+    <!-- <input id="clear" onclick="clearFields()" type="submit" value="Tüm Filtreleri Kaldır"> -->
+    <input id="select_button" class="btn btn-primary" type="submit" value="Seçilen Tercih Sayısı">
+    <table id='deplist' class="ui celled table" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th></th>
+                <th>No</th>
+                <th>Üniversite Adı</th>
+                <th>Bulunduğu Şehir</th>
+                <th>Türü</th>
+                <th>Fakülte Adı</th>
+                <th>Bölüm Adı</th>
+                <th>Bölüm Kodu</th>
+                <th>Notlar</th>
+                <th>Öğretim Süresi</th>
+                <th>Kontenjan</th>
+                <th>Öel Koşullar</th>
+                <th>Puan Türü</th>
+                <th>Yerleşme Sırası</th>
+                <th>Yerleşme Puanı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- preloader start here -->
+    <div class="loading">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 footer-col">
+                <div class="logofooter">
+                    <a href="{% url 'main:robot' %}"><img src="../static/images/logo-hexagonblue2.png" style="width: 40%"></a>
+                </div>
+                <p>Tercihim.net üniversite adaylarının tercihlerinden üniversite seçimlerine kadar rehberlik etmek için hazırlanmıştır.</p>
+                <p><i class="fa fa-envelope"></i> E-mail : info@tercihim.net</p>
+
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">YARARLI LİNKLER</h6>
+                <ul class="footer-ul">
+                    <li><a href="#"> Kariyer</a></li>
+                    <li><a href="#"> YÖK ATLAS</a></li>
+                    <li><a href="#"> Tercihlerde Dikkat Edilecek Hususlar</a></li>
+                    <li><a href="#"> Okul Sıralamaları</a></li>
+                    <li><a href="#"> Yurtdışı Eğitim</a></li>
+                    <li><a href="#"> Öğrenci Yorumları</a></li>
+                    <li><a href="#"> Sözlük</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">SON HABERLER </h6>
+                <div class="post">
+                    <p> ÖSYM Tercih Kılavuzları Açıklandı<span>August 3,2015</span></p>
+                    <p> ÖSYM Başkanı Ömer Demir İstifa Etti<span>August 3,2015</span></p>
+                    <p> ÖSYM den Sınav Tarihlerine İlişkin Değişiklik <span>August 3,2015</span></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">Sosyal Medya</h6>
+                <ul class="social">
+                    <a href="#"><i class="fa fa-lg fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-lg fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-lg fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-lg fa-youtube"></i></a>
+                    <a href="#"><i class="fa fa-lg fa-rss"></i></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer start from here-->
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p>© 2017 - All Rights Reserved Tercihim.net</p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+                <li><a href="#">Tercihim.net</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Site Map</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

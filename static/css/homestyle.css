@@ -1,0 +1,219 @@
+/*scroll effect*/
+.navbar-trans {
+    background-color: transparent;
+    border: none;
+    transition: top 1s ease;
+}
+/*double row*/
+.navbar-doublerow > .navbar {
+    display: block;
+    padding: 0 ;
+    margin: 0 auto;
+    min-height: 25px;
+}
+
+.navbar-doublerow .nav {
+    padding: 0;
+}
+
+.navbar-doublerow .dividline {
+    margin: 5px 100px;
+    padding-top: 1px;
+    background-color: inherit;
+}
+/*top nav*/
+.navbar-doublerow .navbar-top ul > li > a {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.navbar-doublerow .navbar-top ul #signplace {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#top-menu {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+/*down nav*/
+.navbar-doublerow .navbar-down .navbar-brand {
+    padding: 0;
+    float: left;
+    color: #fff;
+    font-size: 32px;
+    padding-top: 20px;
+}
+
+    .navbar-doublerow .navbar-down ul > li > a {
+    font-size: 16px;
+    color: #fff;
+    transition: border-bottom .2s ease-in, transform .2s ease-in-out;
+}
+
+    .navbar-doublerow .navbar-down ul > li > a:hover {
+        border-bottom: 1px solid #fff;
+        color: #fff;
+    }
+
+.navbar-doublerow .navbar-down .dropdown {
+    padding: 5px;
+    color: #000;
+}
+
+    .navbar-doublerow .navbar-down .dropdown ul > li > a,
+    .navbar-doublerow .navbar-down .dropdown ul > li > a:hover {
+        color: #000;
+        border-bottom: none;
+    }
+
+.navbar-doublerow.navbar-trans.afterscroll {
+}
+
+.navbar-doublerow.navbar-trans.afterscroll {
+    top: -50px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-item {
+}
+/*text*/
+.text-white, .text-white-hover:hover {
+    color: #fff !important
+}
+/*fontcolor*/
+.light-grey {
+    color: #000 !important;
+    background-color: #E6E9ED !important
+}
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/unilife.jpg");
+    background-size: cover;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-transform: none;
+    margin: 0;
+    font-size: 5rem;
+    white-space: nowrap;
+}
+
+p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+.typewrite {
+    color: white;
+    font-family: "Raleway", sans-serif;
+}
+
+    .typewrite:hover {
+        color: white;
+        text-decoration-line: none;
+    }
+
+.fi-social-facebook, .fi-social-twitter, .fi-social-instagram, .fi-social-youtube {
+    font-size: 28px;
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+#login-dp {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,.8);
+    margin-left: -80px;
+    border-radius: 20px;
+    position:absolute;
+}
+
+    #login-dp .help-block {
+        font-size: 12px
+    }
+
+    #login-dp .bottom {
+        background-color: rgba(255,255,255,.8);
+        border-top: 1px solid #ddd;
+        clear: both;
+        padding: 14px;
+    }
+
+    #login-dp .social-buttons {
+        margin: 12px 0
+    }
+
+        #login-dp .social-buttons a {
+            width: 49%;
+        }
+
+    #login-dp .form-group {
+        margin-bottom: 10px;
+    }
+
+.btn-fb {
+    color: #fff;
+    background-color: #3b5998;
+}
+
+    .btn-fb:hover {
+        color: #ffffff;
+        background-color: #496ebc
+    }
+
+.btn-tw {
+    color: #ffffff;
+    background-color: #55acee;
+}
+
+    .btn-tw:hover {
+        color: #ffffff;
+        background-color: #59b5fa;
+    }
+
+@media(max-width:768px) {
+    #login-dp {
+        background-color: inherit;
+        color: #fff;
+    }
+
+        #login-dp .bottom {
+            background-color: inherit;
+            border-top: 0 none;
+        }
+}
+#signplace {
+    color:white;
+    font-size:20px;
+    border: white 1px solid;
+    border-radius:25px;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left:auto;
+}
+.dropdown {
+    margin: auto 0 auto auto;
+}
+
