@@ -133,4 +133,4 @@ STATICFILES_DIRS = [
 ]
 print(STATICFILES_DIRS)
 #static root for live server
-#STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/staticfiles/')

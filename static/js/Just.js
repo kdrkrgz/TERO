@@ -164,7 +164,7 @@ $(document).ready(function () {
                  style : "multi"
              },
             ajax: {
-                url: '../static/data.txt',
+                url: 'http://127.0.0.1:5000/data/deplist',
                 dataSrc: ''
                 },
             language: {

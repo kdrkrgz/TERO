@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Home_view, name='home'),
     url(r'^Tercih/', include('main.urls')),
-#    url(r'^data/', include('api.urls'))
+    url(r'^data/', include('api.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
